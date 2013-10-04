@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "miAlert", "miAlert\miAlert.csproj", "{41B208EC-33A8-4AD3-A11B-BD49E1CA1418}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "miAlert.Tests", "miAlert.Tests\miAlert.Tests.csproj", "{94E2888F-AFC7-45E2-A43A-FBC506E2597E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{41B208EC-33A8-4AD3-A11B-BD49E1CA1418}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41B208EC-33A8-4AD3-A11B-BD49E1CA1418}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41B208EC-33A8-4AD3-A11B-BD49E1CA1418}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41B208EC-33A8-4AD3-A11B-BD49E1CA1418}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94E2888F-AFC7-45E2-A43A-FBC506E2597E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94E2888F-AFC7-45E2-A43A-FBC506E2597E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94E2888F-AFC7-45E2-A43A-FBC506E2597E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94E2888F-AFC7-45E2-A43A-FBC506E2597E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
