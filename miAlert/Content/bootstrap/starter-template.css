@@ -1,0 +1,22 @@
+﻿body {
+  padding-top: 60px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+.panel {
+        margin-bottom: 0px;
+    }
+    .rssFeed {
+         overflow-x: no-display; overflow-y: scroll
+    }
+    .pageContainer {
+        width:50%; height:100%; border: solid;
+    }
+    .pageContainer.left {
+        float:left;
+    }
+    .pageContainer.right {
+        float:right;
+    }

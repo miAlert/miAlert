@@ -28,5 +28,11 @@ namespace miAlert.Controllers
 
             return View();
         }
+
+        public ActionResult Process(string url)
+        {
+            ViewBag.Url = url;
+            return View();
+        }
     }
 }
