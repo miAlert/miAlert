@@ -6,9 +6,3 @@
     <div class="rssFeed pageContainer left">@Html.Partial("_RSSFeed",Model)</div>
     <div class="pageContainer right">@Html.Partial("_ArticlePreview")</div>
 </div>
-
-<script type="text/javascript">
-    function showPreview(pageHTML) {
-        document.getElementById('theFrame').src = pageHTML
-    }
-</script>
