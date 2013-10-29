@@ -1,0 +1,66 @@
+﻿<h2>Team</h2>
+<ul>
+    <li>Anthony Freitas</li>
+    <li>Grant Bewers</li>
+    <li>Nicholas McHenry</li>
+    <li>Shane Cottey</li>
+
+</ul>
+
+<h2>Goal</h2>
+<p>
+The goal of our project is to create a website to gather and manipulate news articles and web pages, and for researchers to use this tool to help streamline the time-consuming process of collecting and processing data on agriculture accidents.
+</p>
+<h2>Objectives</h2>
+
+<ul>
+
+<li>It should gather as many news articles possible from the RSS feed</li>
+
+<li>It should minimize the number of context switches a user must make. 
+
+</li>
+
+<li>It should have a database-entry confirmation step where a user may enter in or change data before an incident goes into the database.
+
+</li>
+
+ <li>It should provide archives and view-able windows of the news articles.
+
+
+ <li>It should provide a backup for the database to be downloaded by admin. accounts.
+
+</li>
+
+</ul>
+
+<h2>Design</h2>
+<img src="~/Images/modulesImg.gif" />
+<h3>Module A - RSS Reader</h3>
+<p>
+    This is the entry point of all data into the software system.  Google alerts are sent to an RSS feed which can be embedded in the web application.  An RSS feed reader will be used to display the articles in a similar format to Twitter.  When a user creates an alert with a given keyword, the user is given what is called a hub.  The hub is updated from Google whenever there is new content available for the given keyword(s).  The goal is to subscribe to multiple different hubs with different keywords relating to agricultural accidents, then combine all of the results into one feed.  The feed will keep all results google supplies to the user in a database.  The database will then be viewable via the feed where users can select an article.  Google RSS feeds come with metadata that has been pre-processed.  This will hopefully provide useful database entry fields for us to automatically fill in without having to utilize a large text scraping tool or having the user search through the article for it all.
+</p>
+<h3>Module B - Text Scraping</h3>
+<p>
+    The purpose of this module is to scan html text and fill in Database fields. The exact names of the Database fields are in Appendix A: Database Fields By Category sorted by data type and expected accuracy. Two approaches are taken to fill in the fields and full explanations are given in Section 2.3: Complete Module-wise Specifications. These are, respectively, keyword analysis and  part-of-speech tagging do determine the relationship between likely words. The first method is used primarily for binary fields where the presence of one certain words generally indicate an affirmative and for option fields where keywords indicate the topic broached. The second approach is used for all text fields and especially for associating injury details to each person involved. Beyond these, there is also a third case where we already know the contents of a field. Examples of these fields include “Link1”, “Today’s Date”, and various ID fields. Obviously, we automatically fill these in.
+</p>
+<h3>Module C - Database Interaction class</h3>
+<p>
+    This is will be the mode of communication between the server and the database.  Upon receiving and digesting RSS feeds, the user has the option of submitting an article to the database with specific fields filled in.  The user also has the ability to query the database for specific articles submitted in the past.  This class will provide the submitting and retrieval of database entries for the user.
+</p>
+<h3>Module D - User Interface</h3>
+<p>
+    This module is what the user of our application will interact with. They will log into our website and be prompted with a dashboard that will display the articles that they can view and add to the database. The main feature of the dashboard will be the article feed portion. This is where all articles that have been retrieved from Google Alerts and possibly social media will be displayed. The articles will already have been parsed by our text scrapping module and will have key data already identified for the article. When the user selects an article they will be prompted with a database entry form that will have different fields of interest available to be filled in. The data that had been previously scrapped from the article will be placed in the data fields to save time for the user. The user will be able to edit the data fields based off of the data that he/she reads in the article. Once they have completed the entry forum they can choose to publish the article to their database. Throughout the lifetime of our project we will be in contact with our client and add any interface designs that she thinks will help with the productivity of her assistants. 
+</p>
+<h3>Module E - User Accounts</h3>
+<p>
+    This module represents the encapsulation of permissions and actions within users of the website, through a hierarchical account system.  Each function and view is dependent on account type, and what will be called or displayed is based on who the user account is.  More specifically the user accounts are separated into three types: normal,  privileged, and administrator.  A normal account has the same basic function as navigating through the site without an account (nothing is displayed in the view and there are no actual features) but it is now an account within the site that can be given functionality by becoming a privileged account. These upgraded accounts will be used by the volunteers and contain the basic database and RSS processing/viewing capabilities. Finally the account with the most possible access is the administrator, who can create privileged accounts or other admins, and view and manipulate the database in additional ways such as downloading backup copies.
+</p>
+<h3>Module F - Database Queries</h3>
+<p>
+    This module will allow the user to submit a query to the website and allow them to retrieve a response from the database. Our client needs to be able to run basic queries against the data that she has stored in the database for her research so we decided that the easiest way to do this is to have a stand alone page that she can go to in order to execute her queries. It will be able to handle as complicated of queries as she desires so that she doesn’t lose the functionality she should have if she was doing her research manually without our website.
+</p>
+<h3>Module G - PDF Generator </h3>
+<p>
+    This module is the conversion of a web-page to a PDF file, where the process is used to capture the relevant page of a news article.  New entries pulled from the RSS feed will pass the web-page to the converter, which will produce and store a PDF file with the RSS entry (now a pre-process entry).  When a privileged user logs in and views the articles to be processed, selected entries display the PDF file of the web-page.  The PDF generator not only provides a web-page capture system for users to save and utilize, but also represents a more efficient solution to displaying selected pre-processed entries, as opposed to the use of live connections for each site.
+</p>

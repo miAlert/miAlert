@@ -1,0 +1,16 @@
+﻿@{
+    string urlToLoad = "";
+    if(ViewBag.Url != null){
+        urlToLoad = ViewBag.Url;
+    }
+}
+
+<iframe id="theFrame" src="@urlToLoad" style="width: 100%; height: 100%"></iframe>
+
+
+
+<script type="text/javascript">
+    function showPreview(pageHTML) {
+        document.getElementById('theFrame').src = pageHTML
+    }
+</script>

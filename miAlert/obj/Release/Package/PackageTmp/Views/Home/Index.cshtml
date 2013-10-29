@@ -1,0 +1,8 @@
+﻿@using miAlert.Models.Home
+@model miAlert.Models.Home.RssFeedViewModel
+
+<!--This is all hard coded for demo purposes-->
+<div style="width: 100%; height: 700px;">
+    <div class="rssFeed pageContainer left">@Html.Partial("_RSSFeed",Model)</div>
+    <div class="pageContainer right">@Html.Partial("_ArticlePreview")</div>
+</div>

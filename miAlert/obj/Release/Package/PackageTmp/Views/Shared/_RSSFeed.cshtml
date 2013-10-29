@@ -1,0 +1,8 @@
+﻿@using miAlert.Models.Home
+@model miAlert.Models.Home.RssFeedViewModel
+
+@{
+    foreach(RssItemViewModel item in Model.RssItems){
+        @Html.Partial("_RssItem",item)
+    }
+}
