@@ -169,3 +169,5 @@ D:\School\482\Source\miAlert\miAlert\bin\zh-Hant\System.Spatial.resources.dll
 D:\School\482\Source\miAlert\miAlert\obj\Debug\miAlert.dll
 D:\School\482\Source\miAlert\miAlert\obj\Debug\miAlert.pdb
 D:\School\482\Source\miAlert\miAlert\obj\Debug\miAlert.csprojResolveAssemblyReference.cache
+D:\School\482\Source\miAlert\miAlert\bin\EntityFramework.SqlServer.dll
+D:\School\482\Source\miAlert\miAlert\bin\EntityFramework.SqlServer.xml

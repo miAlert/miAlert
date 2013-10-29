@@ -1,4 +1,5 @@
-﻿using System;
+﻿using miAlert.Models.Home;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,11 @@ namespace miAlert.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            RssFeedViewModel testData = new RssFeedViewModel();
+            testData.RssItems = new List<RssItemViewModel>();
+            testData.RssItems.Add(new RssItemViewModel() { Url = "http://www.wthr.com/story/23499073/2013/09/22/man-dies-in-hendricks-county-tractor-rollover", Title = "Man dies when tractor rolls over in Hendricks County" });
+            testData.RssItems.Add(new RssItemViewModel() { Url = "http://www.yahoo.com", Title = "Yahoo"});
+            return View(testData);
         }
 
         public ActionResult About()

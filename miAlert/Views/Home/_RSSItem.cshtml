@@ -1,0 +1,13 @@
+﻿@using miAlert.Models.Home
+@model miAlert.Models.Home.RssItemViewModel
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">@Model.Title</h3>
+    </div>
+    <div class="panel-body">
+        <a href="@Model.Url">Link</a>
+        <button class="btn-success" style="float: right" onclick="showPreview('@Model.Url');">Open</button>
+        <button class="btn-warning" style="float: right; margin-right: 5px" onclick="location.href='@Url.Action("Process", new { url = @Model.Url })'">Process</button>
+    </div>
+</div>
