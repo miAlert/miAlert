@@ -9,5 +9,10 @@ namespace miAlert.Models.Home
     {
         public String Url;
         public String Title;
+        public bool DeathInvolved;
+        public RssItemViewModel()
+        {
+            DeathInvolved = false;
+        }
     }
 }

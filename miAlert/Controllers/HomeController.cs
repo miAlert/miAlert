@@ -14,7 +14,7 @@ namespace miAlert.Controllers
             RssFeedViewModel testData = new RssFeedViewModel();
             testData.RssItems = new List<RssItemViewModel>();
             testData.RssItems.Add(new RssItemViewModel() { Url = "http://www.wthr.com/story/23499073/2013/09/22/man-dies-in-hendricks-county-tractor-rollover", Title = "Man dies when tractor rolls over in Hendricks County" });
-            testData.RssItems.Add(new RssItemViewModel() { Url = "http://www.yahoo.com", Title = "Yahoo"});
+            testData.RssItems.Add(new RssItemViewModel() { Url = "http://kitchener.ctvnews.ca/drayton-area-man-dies-in-fatal-tractor-crash-1.1476488", Title = "Drayton-area man dies in fatal tractor crash", DeathInvolved = true });
             return View(testData);
         }
 

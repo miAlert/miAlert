@@ -1,7 +1,16 @@
 ﻿@using miAlert.Models.Home
 @model miAlert.Models.Home.RssItemViewModel
 
-<div class="panel panel-primary">
+@{
+    string divClass = "panel-primary";
+    if(Model.DeathInvolved)
+    {
+        divClass = "panel-danger";
+    }
+}
+
+
+<div class="panel @divClass">
     <div class="panel-heading">
         <h3 class="panel-title">@Model.Title</h3>
     </div>
