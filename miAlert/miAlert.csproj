@@ -39,17 +39,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -199,6 +199,24 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Home\RssFeedViewModel.cs" />
     <Compile Include="Models\Home\RssItemViewModel.cs" />
+    <Compile Include="Models\RSSDatabase\article.cs">
+      <DependentUpon>rssDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RSSDatabase\rssDatabase.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rssDatabase.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RSSDatabase\rssDatabase.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rssDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RSSDatabase\rssDatabase.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rssDatabase.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -272,6 +290,23 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <EntityDeploy Include="Models\RSSDatabase\rssDatabase.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>rssDatabase.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\RSSDatabase\rssDatabase.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>rssDatabase.edmx</DependentUpon>
+      <LastGenOutput>rssDatabase.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\RSSDatabase\rssDatabase.edmx.diagram">
+      <DependentUpon>rssDatabase.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\RSSDatabase\rssDatabase.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>rssDatabase.edmx</DependentUpon>
+      <LastGenOutput>rssDatabase.cs</LastGenOutput>
+    </Content>
     <None Include="Properties\PublishProfiles\aginjuryalerts.org - Web Deploy.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
@@ -350,6 +385,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

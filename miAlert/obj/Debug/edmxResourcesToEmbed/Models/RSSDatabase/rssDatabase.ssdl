@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="rssModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="rssModelStoreContainer">
+    <EntitySet Name="articles" EntityType="rssModel.Store.articles" store:Type="Tables" store:Schema="rss" store:Name="articles">
+      <DefiningQuery>SELECT
+      `articles`.`Title`, 
+      `articles`.`Link`, 
+      `articles`.`Date`, 
+      `articles`.`Content`
+      FROM `articles` AS `articles`</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'def.rss.articles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="articles">
+    <Key>
+      <PropertyRef Name="Title" />
+      <PropertyRef Name="Link" />
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="Content" />
+    </Key>
+    <Property Name="Title" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Link" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="Content" Type="text" Nullable="false" />
+  </EntityType>
+</Schema>

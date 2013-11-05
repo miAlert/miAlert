@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using miAlert.Models.RSSDatabase;
 
 namespace miAlert.Controllers
 {
@@ -13,8 +14,13 @@ namespace miAlert.Controllers
         {
             RssFeedViewModel testData = new RssFeedViewModel();
             testData.RssItems = new List<RssItemViewModel>();
-            testData.RssItems.Add(new RssItemViewModel() { Url = "http://www.wthr.com/story/23499073/2013/09/22/man-dies-in-hendricks-county-tractor-rollover", Title = "Man dies when tractor rolls over in Hendricks County" });
-            testData.RssItems.Add(new RssItemViewModel() { Url = "http://kitchener.ctvnews.ca/drayton-area-man-dies-in-fatal-tractor-crash-1.1476488", Title = "Drayton-area man dies in fatal tractor crash", DeathInvolved = true });
+            //Read data from database
+            var _context = new rssEntities();
+            var _articles = _context.articles;
+            foreach (var article in _articles)
+            {
+                testData.RssItems.Add(new RssItemViewModel() { Url = article.Link, Title = article.Title });
+            }
             return View(testData);
         }
 
