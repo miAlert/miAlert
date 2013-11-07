@@ -192,13 +192,13 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RSSController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Home\RssFeedViewModel.cs" />
-    <Compile Include="Models\Home\RssItemViewModel.cs" />
     <Compile Include="Models\RSSDatabase\article.cs">
       <DependentUpon>rssDatabase.tt</DependentUpon>
     </Compile>
@@ -280,6 +280,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Databases\RSSDatabase.accdb" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\modulesImg.gif" />
@@ -374,11 +375,12 @@
     <Content Include="Views\Shared\_alerts.cshtml" />
     <Content Include="Views\Shared\_validationSummary.cshtml" />
     <Content Include="Views\Shared\_ArticlePreview.cshtml" />
-    <Content Include="Views\Shared\_RSSFeed.cshtml" />
+    <Content Include="Views\Home\_RSSFeed.cshtml" />
     <Content Include="Views\Home\Process.cshtml" />
     <Content Include="Views\Shared\_DatabaseForm.cshtml" />
     <Content Include="Views\Home\_RSSItem.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\RSS\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

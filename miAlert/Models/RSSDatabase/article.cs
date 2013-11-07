@@ -14,9 +14,11 @@ namespace miAlert.Models.RSSDatabase
     
     public partial class article
     {
+        public int Id { get; set; }
         public string Title { get; set; }
         public string Link { get; set; }
-        public System.DateTime Date { get; set; }
         public string Content { get; set; }
+        public System.DateTime Date { get; set; }
+        public Nullable<bool> Deleted { get; set; }
     }
 }

@@ -1,0 +1,52 @@
+﻿@using miAlert.Models.Home
+@using miAlert.Models.RSSDatabase
+@model miAlert.Models.Home.RssFeedViewModel
+
+@{
+    if (ViewBag.rssType == "deletedArticles")
+    {
+        <div style="padding: 5px">
+            <select class="btn-group" style="padding: 5px; text-align: center; display: inline-block" onchange=" showRSSFeed(this.value); ">
+                <option value="newArticles">New Artciles</option>
+                <option value="deletedArticles" selected="selected">Deleted Articles</option>
+            </select>
+        </div>
+    }
+    else
+    {
+        <div style="padding: 5px">
+            <select class="btn-group" style="padding: 5px; text-align: center; display: inline-block" onchange=" showRSSFeed(this.value); ">
+                <option value="newArticles" selected="selected">New Artciles</option>
+                <option value="deletedArticles">Deleted Articles</option>
+            </select>
+        </div>
+    }
+}
+
+@{
+    foreach (article item in Model.RssItems)
+    {
+        @Html.Partial("_RSSItem", item)
+    }
+}
+
+<script type="text/javascript">
+    showRSSFeed = function(value) {
+        var methodName = "";
+        if (value == "newArticles") {
+            methodName = "Home/DisplayValidArticles";
+        }
+        else if (values = "deletedArticles") {
+            methodName = "Home/DisplayDeletedArticles";
+        }
+        $.ajax({
+            url: methodName,
+            data: {  },
+            type: 'GET',
+            success: function (result) {
+                $("#rssFeed").html(result);
+            }
+        });
+    }
+    
+</script>

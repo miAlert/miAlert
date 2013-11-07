@@ -4,34 +4,22 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="rssModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="rssModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="rssModelStoreContainer">
-          <EntitySet Name="articles" EntityType="rssModel.Store.articles" store:Type="Tables" store:Schema="rss" store:Name="articles">
-            <DefiningQuery>SELECT
-      `articles`.`Title`, 
-      `articles`.`Link`, 
-      `articles`.`Date`, 
-      `articles`.`Content`
-      FROM `articles` AS `articles`</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="articles" EntityType="rssModel.Store.articles" store:Type="Tables" Schema="rss" />
         </EntityContainer>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'def.rss.articles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
         <EntityType Name="articles">
           <Key>
-            <PropertyRef Name="Title" />
-            <PropertyRef Name="Link" />
-            <PropertyRef Name="Date" />
-            <PropertyRef Name="Content" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Title" Type="varchar" Nullable="false" MaxLength="100" />
-          <Property Name="Link" Type="varchar" Nullable="false" MaxLength="100" />
-          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="Link" Type="varchar" Nullable="false" MaxLength="500" />
           <Property Name="Content" Type="text" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Deleted" Type="bool" />
         </EntityType>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="rssModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -40,15 +28,14 @@
         </EntityContainer>
         <EntityType Name="article">
           <Key>
-            <PropertyRef Name="Title" />
-            <PropertyRef Name="Link" />
-            <PropertyRef Name="Date" />
-            <PropertyRef Name="Content" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Title" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="Link" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="Date" Type="DateTime" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Link" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
           <Property Name="Content" Type="String" Nullable="false" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" />
+          <Property Type="Boolean" Name="Deleted" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -59,10 +46,12 @@
           <EntitySetMapping Name="articles">
             <EntityTypeMapping TypeName="rssModel.article">
               <MappingFragment StoreEntitySet="articles">
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Link" ColumnName="Link" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

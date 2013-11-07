@@ -12,16 +12,15 @@ namespace miAlert.Controllers
     {
         public ActionResult Index()
         {
-            RssFeedViewModel testData = new RssFeedViewModel();
-            testData.RssItems = new List<RssItemViewModel>();
+            var rssData = new RssFeedViewModel {RssItems = new List<article>()};
             //Read data from database
-            var _context = new rssEntities();
-            var _articles = _context.articles;
-            foreach (var article in _articles)
+            var context = new rssEntities();
+            var articles = context.articles.Where(a => a.Deleted == null || a.Deleted != true);
+            foreach (var article in articles)
             {
-                testData.RssItems.Add(new RssItemViewModel() { Url = article.Link, Title = article.Title });
+                rssData.RssItems.Add(article);
             }
-            return View(testData);
+            return View(rssData);
         }
 
         public ActionResult About()
@@ -34,10 +33,53 @@ namespace miAlert.Controllers
             return View();
         }
 
-        public ActionResult Process(string url)
+        public ActionResult Process(int articleId)
         {
-            ViewBag.Url = url;
+            var context = new rssEntities();
+            var articles = context.articles;
+            var article = articles.Single(a => a.Id == articleId);
+            ViewBag.Url = article.Link;
             return View();
+        }
+
+        [HttpGet]
+        public PartialViewResult DeleteArticle(int articleId)
+        {
+            var rssData = new RssFeedViewModel {RssItems = new List<article>()};
+            var context = new rssEntities();
+            var articles = context.articles;
+            var article = articles.Single(a => a.Id == articleId);
+            article.Deleted = true;
+            context.SaveChanges();
+            return DisplayValidArticles();
+        }
+
+        [HttpGet]
+        public PartialViewResult DisplayValidArticles()
+        {
+            var rssData = new RssFeedViewModel { RssItems = new List<article>() };
+            var context = new rssEntities();
+            var articlesToDisplay = context.articles.Where(a => a.Deleted == null || a.Deleted != true);
+            foreach (var a in articlesToDisplay)
+            {
+                rssData.RssItems.Add(a);
+            }
+            ViewBag.rssType = "validArticles";
+            return PartialView("_RSSFeed", rssData);
+        }
+
+        [HttpGet]
+        public PartialViewResult DisplayDeletedArticles()
+        {
+            var rssData = new RssFeedViewModel { RssItems = new List<article>() };
+            var context = new rssEntities();
+            var articlesToDisplay = context.articles.Where(a => a.Deleted == true);
+            foreach (var a in articlesToDisplay)
+            {
+                rssData.RssItems.Add(a);
+            }
+            ViewBag.rssType = "deletedArticles";
+            return PartialView("_RSSFeed", rssData);
         }
     }
 }

@@ -2,7 +2,23 @@
     ViewBag.Title = "Process";
 }
 
-<div style="width: 100%; height: 700px;">
+<div style="width: 100%; height: 700px;" id="pageContainer">
     <div class="pageContainer left">@Html.Partial("_ArticlePreview")</div>
     <div class="pageContainer right">@Html.Partial("_DatabaseForm")</div>
 </div>
+
+<script type="text/javascript">
+
+    setWindowsSize = function() {
+        $('#pageContainer').height(window.innerHeight - 80);
+    };
+    
+    window.onresize = function (event) {
+        setWindowsSize();
+    };
+
+    window.onload = function(event) {
+        setWindowsSize();
+    };
+
+</script>
