@@ -280,7 +280,6 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
-    <Content Include="Databases\RSSDatabase.accdb" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\modulesImg.gif" />
@@ -384,6 +383,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Databases\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

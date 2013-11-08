@@ -4,10 +4,12 @@
     <EntitySetMapping Name="articles">
       <EntityTypeMapping TypeName="rssModel.article">
         <MappingFragment StoreEntitySet="articles">
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="Link" ColumnName="Link" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

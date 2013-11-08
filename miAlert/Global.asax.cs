@@ -25,7 +25,7 @@ namespace miAlert
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
-            //AddTask("UpdateArticles",10);
+            AddTask("UpdateArticles",600);
         }
 
 

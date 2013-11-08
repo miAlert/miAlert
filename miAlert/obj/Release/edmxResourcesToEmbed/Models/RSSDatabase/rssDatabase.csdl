@@ -5,14 +5,13 @@
   </EntityContainer>
   <EntityType Name="article">
     <Key>
-      <PropertyRef Name="Title" />
-      <PropertyRef Name="Link" />
-      <PropertyRef Name="Date" />
-      <PropertyRef Name="Content" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Title" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
-    <Property Name="Link" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
-    <Property Name="Date" Type="DateTime" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="Link" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
     <Property Name="Content" Type="String" Nullable="false" MaxLength="65535" Unicode="false" FixedLength="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+    <Property Type="Boolean" Name="Deleted" />
   </EntityType>
 </Schema>
