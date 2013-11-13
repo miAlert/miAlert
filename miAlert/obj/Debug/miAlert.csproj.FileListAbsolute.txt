@@ -170,9 +170,6 @@ D:\School\482\Source\miAlert\miAlert\obj\Debug\miAlert.dll
 D:\School\482\Source\miAlert\miAlert\obj\Debug\miAlert.pdb
 D:\School\482\Source\miAlert\miAlert\bin\EntityFramework.SqlServer.dll
 D:\School\482\Source\miAlert\miAlert\bin\EntityFramework.SqlServer.xml
-D:\School\482\Source\miAlert2\miAlert\miAlert\obj\Debug\miAlert.csprojResolveAssemblyReference.cache
-D:\School\482\Source\miAlert2\miAlert\miAlert\obj\Debug\miAlert.dll
-D:\School\482\Source\miAlert2\miAlert\miAlert\obj\Debug\miAlert.pdb
 D:\School\482\Source\miAlert2\miAlert\miAlert\bin\miAlert.dll
 D:\School\482\Source\miAlert2\miAlert\miAlert\bin\miAlert.pdb
 D:\School\482\Source\miAlert2\miAlert\miAlert\bin\Antlr3.Runtime.dll
@@ -256,3 +253,6 @@ D:\School\482\Source\miAlert2\miAlert\miAlert\bin\ko\System.Spatial.resources.dl
 D:\School\482\Source\miAlert2\miAlert\miAlert\bin\ru\System.Spatial.resources.dll
 D:\School\482\Source\miAlert2\miAlert\miAlert\bin\zh-Hans\System.Spatial.resources.dll
 D:\School\482\Source\miAlert2\miAlert\miAlert\bin\zh-Hant\System.Spatial.resources.dll
+D:\School\482\Source\miAlert2\miAlert\miAlert\obj\Debug\miAlert.csprojResolveAssemblyReference.cache
+D:\School\482\Source\miAlert2\miAlert\miAlert\obj\Debug\miAlert.dll
+D:\School\482\Source\miAlert2\miAlert\miAlert\obj\Debug\miAlert.pdb

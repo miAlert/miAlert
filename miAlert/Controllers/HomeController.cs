@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using miAlert.Models.RSSDatabase;
+using miAlert.Models.AccessDatabase;
 
 namespace miAlert.Controllers
 {

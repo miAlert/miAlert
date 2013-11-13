@@ -20,3 +20,6 @@
     .pageContainer.right {
         float:right;
     }
+    .formEntry {
+        overflow-x: no-display;overflow-y: scroll;
+    }

@@ -197,6 +197,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AccessDatabase\Onlineinjurysurveillance.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Home\RssFeedViewModel.cs" />
     <Compile Include="Models\RSSDatabase\article.cs">
@@ -380,6 +381,7 @@
     <Content Include="Views\Home\_RSSItem.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\RSS\Index.cshtml" />
+    <Content Include="Views\Home\_DatabaseForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
